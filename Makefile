@@ -6,7 +6,7 @@
 #    By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 08:56:50 by thinguye          #+#    #+#              #
-#    Updated: 2021/08/23 14:05:06 by thinguye         ###   ########.fr        #
+#    Updated: 2021/08/24 14:38:30 by thinguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ INC = includes/filler.h
 
 LIB = ft_printf/libftprintf.a ft_printf/libft/libft.a
 
-SRC = src/filler.c \
-		src/read_output.c
+SRC = src/main.c \
+		src/get_map.c
 
 all: $(FILE)
 

@@ -1,0 +1,4 @@
+make re
+cd resources
+./filler_vm_old -f maps/map00 -p1 ../thinguye.filler -p2 players/elindber.filler
+cd ..

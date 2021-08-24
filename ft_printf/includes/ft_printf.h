@@ -6,7 +6,7 @@
 /*   By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 14:45:01 by thinguye          #+#    #+#             */
-/*   Updated: 2021/08/23 14:01:25 by thinguye         ###   ########.fr       */
+/*   Updated: 2021/08/24 14:49:15 by thinguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,5 @@ char				*ft_ftoa(long double src, int prec);
 char				*unsigned_itoa(uintmax_t value, int base);
 char				*unsigned_itoa_caps(uintmax_t value, int base);
 int					ft_printf(const char *format, ...);
+int					count_nbr(intmax_t nbr);
 #endif
