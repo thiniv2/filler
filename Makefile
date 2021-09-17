@@ -6,7 +6,7 @@
 #    By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 08:56:50 by thinguye          #+#    #+#              #
-#    Updated: 2021/08/24 14:38:30 by thinguye         ###   ########.fr        #
+#    Updated: 2021/09/15 16:51:31 by thinguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,28 +14,35 @@ FILE = thinguye.filler
 
 INC = includes/filler.h
 
-LIB = ft_printf/libftprintf.a ft_printf/libft/libft.a
+LIB = libftprintf/libftprintf.a
+
+FLAGS = -Wall -Wextra -Werror
 
 SRC = src/main.c \
-		src/get_map.c
+		src/read_output.c \
+		src/get_positions.c \
+		src/reach_enemy.c \
+		src/count_contacts.c \
+		src/most_enemy.c \
+		src/place_piece.c \
+		src/check_fit.c \
+		src/read_piece.c
 
 all: $(FILE)
 
 $(FILE):
-	@ echo "Compiling Filler..."
-	@ make -C ft_printf
-	@ make -C ft_printf clean
-	@ gcc $(INC) -o $(FILE) $(SRC) $(LIB)
-	@ echo "done"
+	@ make -C libftprintf/ re
+	@ gcc $(FLAGS) -o thinguye.filler $(SRC) $(LIB)
+	@ echo "make done"
 
 clean:
 	@ echo "Cleaning directories"
-	@ make -C ft_printf clean
+	@ make -C libftprintf/ clean
 	@ echo "done"
 
 fclean: clean
 	@ echo "full cleaning directories"
-	@ make -C ft_printf fclean
+	@ make -C libftprintf/ fclean
 	@ rm -rf $(FILE)
 	@ echo "done"
 
