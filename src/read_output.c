@@ -6,7 +6,7 @@
 /*   By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 11:43:17 by thinguye          #+#    #+#             */
-/*   Updated: 2021/09/15 17:12:50 by thinguye         ###   ########.fr       */
+/*   Updated: 2021/09/27 15:11:30 by thinguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	duplicate_board(t_map *map, int y)
 	while (y < map->height && get_next_line(0, &line))
 	{
 		map->board[y] = ft_strsub(line, 4, map->width);
+		if (!map->board[y])
+			return (-1);
 		free(line);
 		y++;
 	}
@@ -52,12 +54,15 @@ int	read_output(t_map *map, t_piece *piece, int x)
 			x += ft_nbrcount(map->height) + 1;
 			map->width = ft_atoi(&(line[x]));
 			map->board = (char **)malloc(sizeof(char *) * (map->height + 1));
+			if (!map->board)
+				return (-1);
 			free(line);
 			break ;
 		}
 		free(line);
 	}
-	duplicate_board(map, 0);
+	if (duplicate_board(map, 0) == -1)
+		return (-1);
 	read_piece(map, piece, 0);
 	return (1);
 }

@@ -6,13 +6,11 @@
 /*   By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:12:05 by thinguye          #+#    #+#             */
-/*   Updated: 2021/09/15 15:33:18 by thinguye         ###   ########.fr       */
+/*   Updated: 2021/09/17 13:57:15 by thinguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-// MAIN ZONE
 
 void	piece_values(t_map *map, t_piece *piece, int y, int x)
 {

@@ -6,7 +6,7 @@
 /*   By: thinguye <thinguye@student.42.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 12:34:26 by thinguye          #+#    #+#             */
-/*   Updated: 2021/09/15 16:57:46 by thinguye         ###   ########.fr       */
+/*   Updated: 2021/09/27 14:38:42 by thinguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	main(void)
 
 	map = (t_map *)malloc(sizeof(t_map));
 	piece = (t_piece *)malloc(sizeof(t_piece));
+	if (!map || !piece)
+		return (-1);
 	map->phase = 0;
 	map->me = NULL;
 	map->enemy = NULL;
@@ -56,7 +58,7 @@ int	main(void)
 	{
 		reset_piece(piece);
 		if (!(read_output(map, piece, 0)))
-			return (0);
+			return (-1);
 		get_positions(map, 0, 0);
 		reach_enemy(map, piece, 0, 0);
 		free_all(map, piece);

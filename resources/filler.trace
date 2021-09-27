@@ -1,4 +1,5 @@
-seed = 2712
+seed = 7728
+../thinguye.filler: Segfault at 75
 ../thinguye.filler won
 Score:
-217AGAINST95
+75AGAINST71
